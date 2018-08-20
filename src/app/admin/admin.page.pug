@@ -1,0 +1,42 @@
+div.container()
+  div.header Registration
+  div.registrationTable
+    mat-table.appTable([dataSource]='dataSource')
+      ng-container(matColumnDef='firstName')
+        mat-header-cell(*matHeaderCellDef='') First Name
+        mat-cell(*matCellDef='let user') {{user.firstName}}
+
+      ng-container(matColumnDef='lastName')
+        mat-header-cell(*matHeaderCellDef='') Last Name
+        mat-cell(*matCellDef='let user') {{user.lastName}}
+
+      ng-container(matColumnDef='address1')
+        mat-header-cell(*matHeaderCellDef='') Address1
+        mat-cell(*matCellDef='let user') {{user.address1}}
+
+      ng-container(matColumnDef='address2')
+        mat-header-cell(*matHeaderCellDef='') Address 2
+        mat-cell(*matCellDef='let user') {{user.address2}}
+
+      ng-container(matColumnDef='city')
+        mat-header-cell(*matHeaderCellDef='') City
+        mat-cell(*matCellDef='let user') {{user.city}}
+
+      ng-container(matColumnDef='state')
+        mat-header-cell(*matHeaderCellDef='') State
+        mat-cell(*matCellDef='let user') {{user.state}}
+
+      ng-container(matColumnDef='zip')
+        mat-header-cell(*matHeaderCellDef='') Zip
+        mat-cell(*matCellDef='let user') {{user.zip}}
+
+      ng-container(matColumnDef='country')
+        mat-header-cell(*matHeaderCellDef='') Country
+        mat-cell(*matCellDef='let user') {{user.country}}
+
+      ng-container(matColumnDef='registrationDate')
+        mat-header-cell(*matHeaderCellDef='') Registration Date
+        mat-cell(*matCellDef='let user') {{user.registrationDate | date}}
+
+      mat-header-row(*matHeaderRowDef='displayedColumns')
+      mat-row(*matRowDef='let row; columns: displayedColumns;')

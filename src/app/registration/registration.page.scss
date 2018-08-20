@@ -1,0 +1,34 @@
+.container {
+  width: 500px;
+  -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+.header {
+  background-color: #6699CC;
+  font-size:22px;
+  padding: 15px;
+}
+
+.registrationForm {
+  background-color: #FDFFFC;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  .formField > mat-form-field {
+    width: 100%;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.superContainer {
+  display: flex;
+  justify-content: center
+}

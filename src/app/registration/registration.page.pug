@@ -1,0 +1,48 @@
+div.superContainer
+  div.container()
+    div.header Registration
+    div.registrationForm([formGroup]="formGroup")
+      div.formField
+        mat-form-field()
+          input(matInput, placeholder='First Name', formControlName='firstName')
+          mat-error(*ngIf="formGroup.get('firstName').hasError('required')") First Name is required
+      div.formField
+        mat-form-field()
+          input(matInput, placeholder='Last Name', formControlName='lastName')
+          mat-error(*ngIf="formGroup.get('lastName').hasError('required')") Last Name is required
+
+      div.formField
+        mat-form-field
+          input(matInput, placeholder='Address 1', formControlName='address1')
+          mat-error(*ngIf="formGroup.get('address1').hasError('required')") Address is required
+
+      div.formField
+        mat-form-field
+          input(matInput, placeholder='Address 2', formControlName='address2')
+      div.formField
+        mat-form-field
+          input(matInput, placeholder='City', formControlName='city')
+          mat-error(*ngIf="formGroup.get('city').hasError('required')") City is required
+
+      div.formField
+        mat-form-field
+          mat-select(placeholder='State', formControlName='state')
+            mat-option(*ngFor='let state of states', [value]='state.abbreviation') {{state.name}}
+          mat-error(*ngIf="formGroup.get('state').hasError('required')") State is required
+
+      div.formField
+        mat-form-field
+          input(matInput, placeholder='Zipcode', formControlName='zip')
+          mat-error(*ngIf="formGroup.get('zip').hasError('required')") Zipcode is required
+          mat-error(*ngIf="formGroup.get('zip').hasError('maxlength') || formGroup.get('zip').hasError('minlength')") Zipcode must be 5 characters long
+
+      div.formField
+        mat-form-field
+          mat-select(placeholder='Country', formControlName='country')
+            mat-option(value='United States') United States
+          mat-error(*ngIf="formGroup.get('country').hasError('required')") Country is required
+
+
+      div.buttonContainer
+        button(mat-raised-button, color='primary', (click)='saveForm()') Save
+
