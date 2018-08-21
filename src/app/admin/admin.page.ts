@@ -19,7 +19,6 @@ export class AdminPage implements OnInit {
   ngOnInit() {
     this.appService.getUsers().subscribe((results) => {
       this.dataSource = new MatTableDataSource(<UserModel[]>results);
-      console.log(results);
     }, (error) => {
       console.log(error);
     });

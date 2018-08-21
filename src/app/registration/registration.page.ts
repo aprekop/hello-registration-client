@@ -52,7 +52,6 @@ export class RegistrationPage implements OnInit {
     } else {
       Object.keys(this.formGroup.controls).forEach(key => {
         this.formGroup.get(key).markAsTouched();
-        console.log(this.formGroup);
       });
     }
   }

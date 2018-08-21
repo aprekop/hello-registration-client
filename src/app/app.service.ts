@@ -15,7 +15,6 @@ export class AppService {
   }
 
   saveUser(user: UserModel): Observable<any> {
-    console.log('hit', user);
     return this.http.post<any>(`${environment.apiUrl}/users`, JSON.stringify(user));
   }
 
